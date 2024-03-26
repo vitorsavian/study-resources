@@ -2,7 +2,6 @@ package insertion_test
 
 import (
 	"datastructure/sort/insertion"
-	"fmt"
 	"reflect"
 	"testing"
 )
@@ -24,17 +23,29 @@ func Test_InsertionSortInt(t *testing.T) {
 			return
 		}
 
-		for i, value := range v.want {
-			fmt.Printf("[%d]: %d", i, value)
-			fmt.Println()
-		}
-
-		for i, value := range sortedArr {
-			fmt.Printf("[%d]: %d", i, value)
-			fmt.Println()
-		}
-
 		t.Errorf("Error in the test")
+	}
+
+}
+
+func Test_InsertionInvertSortInt(t *testing.T) {
+	tests := []struct {
+		param []int
+		want  []int
+	}{
+		{
+			param: []int{2, 5, 1, 0, 10, 25, 50, 90, 85, 77, 66, 44},
+			want:  []int{90, 85, 77, 66, 50, 44, 25, 10, 5, 2, 1, 0},
+		},
+	}
+
+	for _, v := range tests {
+		sortedArr := insertion.InsertionInvertSortInt(v.param)
+		if reflect.DeepEqual(v.want, sortedArr) {
+			return
+		}
+
+		t.Errorf("Error in the test of inversion")
 	}
 
 }
