@@ -1,0 +1,12 @@
+# Ocaml
+_build
+
+# Zig
+zig-cache
+
+# Rust
+Cargo.lock
+target
+
+# Node
+node_modules
