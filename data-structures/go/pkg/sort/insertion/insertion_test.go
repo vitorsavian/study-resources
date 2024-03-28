@@ -1,7 +1,7 @@
 package insertion_test
 
 import (
-	"datastructure/sort/insertion"
+	"datastructure/pkg/sort/insertion"
 	"reflect"
 	"testing"
 )
