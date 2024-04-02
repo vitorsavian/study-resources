@@ -1,11 +1,22 @@
 def insertionSort(array):
     for index in range(1, len(array)):
         value = array[index]
-        previousValue = index - 1
-        while previousValue >= 0 and array[previousValue] > value:
-            array[previousValue + 1] = array[previousValue]
-            previousValue = previousValue - 1
-        array[previousValue + 1] = value
+        previousIndex = index - 1
+        while previousIndex >= 0 and array[previousIndex] > value:
+            array[previousIndex + 1] = array[previousIndex]
+            previousIndex = previousIndex - 1
+        array[previousIndex + 1] = value
+    return
+
+
+def insertionInvertSort(array):
+    for index in range(1, len(array)):
+        value = array[index]
+        previousIndex = index - 1
+        while previousIndex >= 0 and array[previousIndex] < value:
+            array[previousIndex + 1] = array[previousIndex]
+            previousIndex = previousIndex - 1
+        array[previousIndex + 1] = value
     return
 
 
